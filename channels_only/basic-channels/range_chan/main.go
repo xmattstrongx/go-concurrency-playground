@@ -18,6 +18,17 @@ func main() {
 
 	close(ch)
 
+	// long form of the range loop below
+
+	// for {
+	// 	if msg, ok := <-ch; ok {
+	// 		fmt.Print(msg + " ")
+	// 	} else {
+	// 		break
+	// 	}
+	// }
+
+	// range over chan will terminate of channel is drained and closed
 	for _ = range ch {
 		fmt.Print(<-ch + " ")
 	}
